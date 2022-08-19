@@ -1,18 +1,16 @@
-# Flask Motors
+# Flask-Motors
 
-![Python](https://img.shields.io/badge/python-3.9%20%7C%203.10-blue?style=flat-square)
+- Uma API, criada apenas para treinar habilidades com Python e Flask.
 
-- A RestFul API, created just for training Python and Flask skills.
+- Arquitetura desse projeto, foi baseada, usando conceitos de Factories e Blueprints
 
-- The architecture of this project was based, using concepts from Factories and Blueprints
+- Usa o ORM SQLAlchemy.
 
-- As an ORM, it uses SQLAlchemy.
+- Está configurado para trabalhar com o SGBD PostgreSQL.
 
-- Is configured to work with PostgreSQL Database
+- O Banco da dados está rodando em Docker.
 
-- The database is running on Docker.
-
-- The management of packages and project dependencies was done by Poetry
+- O gerenciamento de pacotes e dependencias do projeto, ficou por conta do Poetry.
 
 ## Essa API foi desenvolvida pensando no seguinte caso de uso
 
