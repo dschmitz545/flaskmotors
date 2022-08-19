@@ -1,4 +1,3 @@
-from calendar import c
 from flask import Flask
 from flaskmotors.api.config import config
 from flaskmotors.api.database.database import db
