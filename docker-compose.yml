@@ -1,0 +1,41 @@
+version: "3.9"
+services:
+    postgres-flaskmotors:
+        restart: always
+        build:
+            context: ./dockerfile
+            dockerfile: Dockerfile
+        ports:
+            - ${POSTGRES_PORT}:${POSTGRES_PORT}
+        volumes:
+            - pg-data:/var/lib/postgresql/data
+        environment:
+            - PGDATA=/var/lib/postgresql/data/flaskmotors/
+            - POSTGRES_DB=${POSTGRES_DB}
+            - POSTGRES_USER=${POSTGRES_USER}
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+        networks:
+            backend:
+              ipv4_address: 172.30.0.2
+    pgadmin-flaskmotors:
+        restart: always
+        image: dpage/pgadmin4:latest
+        environment:
+            - PGADMIN_DEFAULT_EMAIL=${PGADMIN_MAIL}
+            - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PASS}
+        ports:
+            - "${PGADMIN_PORT}:80"
+        depends_on:
+            - postgres-flaskmotors
+        networks:
+            backend:
+              ipv4_address: 172.30.0.3
+volumes:
+    pg-data:
+networks:
+    backend:
+      driver: bridge
+      ipam:
+        config:
+          - subnet: 172.30.0.0/16
+            gateway: 172.30.0.1
