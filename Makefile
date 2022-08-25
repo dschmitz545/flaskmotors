@@ -14,9 +14,7 @@ clean:
 	pip install -e .[dev] --upgrade --no-cache
 
 install:
-	pip install --upgrade pip
-	pip install -r requirements.txt --require-hashes
-	pip install -r requirements-dev.txt --require-hashes
+	pip install -e .['dev']
 
 init_db:
 	FLASK_APP=flaskmotors/app.py flask create-db
@@ -32,4 +30,4 @@ run_dev:
 	FLASK_APP=flaskmotors/app.py FLASK_ENV=development flask run
 
 run:
-	FLASK_APP=flaskmotors/app.py FLASK_ENV=production flask run
+	FLASK_APP=flaskmotors/app.py FLASK_ENV=development flask run
