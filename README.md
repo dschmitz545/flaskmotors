@@ -43,3 +43,8 @@ flask migrate
 ```Bash
 flask run
 ```
+
+### Testando
+
+```Bash
+pytest tests/ -v --fixtures
