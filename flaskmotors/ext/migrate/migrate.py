@@ -1,6 +1,7 @@
 from flask_migrate import Migrate
-from flaskmotors.api.database.database import db
-from flaskmotors.api import models  # noqa
+
+from flaskmotors.ext import models  # noqa
+from flaskmotors.ext.database.database import db
 
 migrate = Migrate()
 

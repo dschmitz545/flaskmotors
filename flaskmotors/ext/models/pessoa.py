@@ -1,4 +1,4 @@
-from flaskmotors.api.database.database import db
+from flaskmotors.ext.database.database import db
 
 
 class PessoaModel(db.Model):
@@ -63,6 +63,10 @@ class PessoaModel(db.Model):
     @classmethod
     def find_by_id(cls, _codigo_pes):
         return cls.query.filter_by(codigo_pes=_codigo_pes).first()
+
+    @classmethod
+    def find_by_name(cls, _nomraz_pes):
+        return cls.query.filter_by(nomraz_pes=_nomraz_pes).first()
 
     @classmethod
     def find_by_cgccpf(cls, _cgccpf_pes):

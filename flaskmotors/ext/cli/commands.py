@@ -1,6 +1,7 @@
 import click
-from flaskmotors.api.database.database import db
-from flaskmotors.api.models import pessoa # noqa
+
+from flaskmotors.ext.database.database import db
+from flaskmotors.ext.models import pessoa  # noqa
 
 
 def init_app(app):

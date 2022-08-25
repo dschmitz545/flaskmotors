@@ -1,8 +1,10 @@
 from http import HTTPStatus
-from flask import Blueprint
+
 from flasgger import swag_from
-from flaskmotors.api.models.welcomemod import WelcomeModel
-from flaskmotors.api.schemas.welcomesc import WelcomeSchema
+from flask import Blueprint
+
+from flaskmotors.ext.models.welcomemod import WelcomeModel
+from flaskmotors.ext.schemas.welcomesc import WelcomeSchema
 
 rt_api = Blueprint('api', __name__)
 
