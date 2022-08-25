@@ -2,7 +2,7 @@ name: Python application
 defaults:
   run:
     shell: bash
-    working-directory: ../flaskmotors
+    working-directory: ./flaskmotors
 
 on:
   push:
