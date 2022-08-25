@@ -11,11 +11,12 @@ clean:
 	rm -rf docs/_build
 	rm -rf .pytest_cache
 	rm -rf *__pycache__
-	pip install -e .[dev] --upgrade --no-cache --require-hashes
+	pip install -e .[dev] --upgrade --no-cache
 
 install:
 	pip install --upgrade pip
-	pip install -e .['dev'] --require-hashes
+	pip install -r requirements.txt --require-hashes
+	pip install -r requirements-dev.txt --require-hashes
 
 init_db:
 	FLASK_APP=flaskmotors/app.py flask create-db
