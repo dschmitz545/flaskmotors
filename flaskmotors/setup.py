@@ -13,12 +13,13 @@ setup(
     author="Diego Schmitz",
     author_email="diego@dschmitz.dev",
     install_requires=read("requirements.txt"),
-    description="Uma API criada apenas para treinar habilidades com Python e Flask",
+    description="Uma API para treinar habilidades com Python e Flask",
     long_description=read("README.md"),
     extras_require={"dev": read("requirements-dev.txt")},
     python_requires=">=3.10",
     classifiers=[
         "Framework :: Flask",
+        "Natural Language :: Portuguese",
         "Programming Language :: Python :: 3.10",
     ]
 )
